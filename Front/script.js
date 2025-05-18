@@ -1,6 +1,7 @@
 // Script.js
 
 import { initializeMainPageEvents } from "./MainPage/MainPage.js";
+import { setExercicesContentTabSelection } from "./Menus/Exercices/Exercices.js";
 
 const routes = {
     '/': null,
@@ -64,6 +65,10 @@ async function loadContent(route) {
 
             const pageHtml = await pageRes.text();
             document.querySelector("#MainPageSelectedMenu").innerHTML = pageHtml;
+            // ✅ Ajouter ceci : si on est sur la page Exercices
+            if (route === "/exercices") {
+                setExercicesContentTabSelection(); // maintenant les boutons sont dans le DOM
+            }
         } else {
             document.querySelector("#MainPageSelectedMenu").innerHTML = `<p>📛 Page introuvable</p>`;
         }
@@ -91,9 +96,6 @@ function setURLNavigation(){
     });
 }
 
-loadContent(location.pathname);
 setURLNavigation()
-
-window.addEventListener('resize', () => {
-  console.log('Largeur de la fenêtre :', window.innerWidth, 'px');
-});
+loadContent(location.pathname);
+setExercicesContentTabSelection()

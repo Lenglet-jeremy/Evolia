@@ -5,7 +5,6 @@ export function initializeMainPageEvents() {
     const close = document.getElementById('MainPageCloseMenu');
     const menu = document.getElementById('MainPageMainMenu');
     const nav = document.getElementById('MainPageNavigationPanel'); // ➕ on récupère le nav
-    console.log(document.getElementById('MainPageSelectedMenu'));
     
 
     if (burger && close && menu && nav) {

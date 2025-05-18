@@ -94,7 +94,7 @@
             }
 
             .MainPageNavigationPanel.menu-open .MainPageBurgerToggle {
-                display: none;
+                z-index: 0;
             }
             .MainPageSelectedMenu {
                 flex: 1;
