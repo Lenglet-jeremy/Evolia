@@ -32,18 +32,23 @@
                         background: none;
                         border: none;
                         color: white;
-                        z-index: 2;
+                        z-index: 1;
                     }
                 }
                 .MainPageMainMenu {
+                    width: 100vw;
+                    height: 100vh;
+
+                    background-color: #000;
+                    color: #f0f0f0;
+
+                    display: flex;
+                    flex-direction: column;
+
                     position: fixed;
                     top: 0;
                     left: 0;
-                    width: 100vw;
-                    height: 100vh;
-                    background-color: #000;
-                    color: #f0f0f0;
-                    flex-direction: column;
+
                     z-index: 1;
 
                     /* animations */
@@ -53,10 +58,36 @@
                     /* rendre toujours présent pour permettre l'animation */
                     visibility: hidden;
                     opacity: 1;
-                    display: flex;
+
+                    .MainPageMenusArea{
+                        display: flex;
+                        flex: 1;
+                        flex-direction: column;
+                        justify-content: space-between;
+
+                        .MainPageMenus{
+                            a{
+                                padding: 10px;
+                            }
+                        }
+
+                        .MainPageUserAccountArea{
+                            display: flex;
+                            flex-direction: row;
+
+                            cursor: pointer;
+
+                            img{
+                                height: 30px;
+                                width: 30px;
+
+                                background-color: #FFFFFF;
+                            }
+                        }
+                    }
 
                     .MainPageCloseMenu {
-                        display: none;
+                        display: flex;
                         font-size: 24px;
                         background: none;
                         border: none;
@@ -72,21 +103,17 @@
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    padding: 1rem 0;
                     border-bottom: 1px solid #444;
                 }
 
                 .MainPageTitleCloseMainMenu p {
                     margin: 0;
-                    font-size: 1.2rem;
                     color: #fff;
                 }
 
                 .MainPageMainMenu li a {
                     display: block;
                     width: 100%;
-                    padding: 1rem 0;
-                    font-size: 1rem;
                 }
             }
             .MainPageNavigationPanel.menu-open .MainPageCloseMenu {
