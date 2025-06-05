@@ -3,13 +3,25 @@
 <div id="UserRegisterContainer" class="UserRegisterContainer">
     <div id="UserRegisterBox" class="UserRegisterBox">
         <div id="UserRegisterTitle" class="UserRegisterTitle">
-            <h2>Créer un compte sur FuturIntros</h2>
+            <h2>Créer un compte</h2>
         </div>
 
         <form id="RegisterForm" class="LoginForm">
             <input type="text" placeholder="Nom complet" required />
             <input type="email" placeholder="Adresse e-mail" required />
-            <input type="password" placeholder="Mot de passe" required />
+            <div class="password-field-wrapper">
+                <input type="password" id="password" placeholder="Mot de passe" required />
+
+                <div id="password-requirements" class="password-requirements" style="display: none;">
+                    <p id="req-length">• Au moins 8 caractères</p>
+                    <p id="req-uppercase">• Une majuscule</p>
+                    <p id="req-lowercase">• Une minuscule</p>
+                    <p id="req-number">• Un chiffre</p>
+                    <p id="req-special">• Un caractère spécial</p>
+                </div>
+            </div>
+
+
             <input type="password" placeholder="Confirmer le mot de passe" required />
             <button type="submit">S'inscrire</button>
         </form>

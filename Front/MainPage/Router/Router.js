@@ -1,4 +1,5 @@
 import { setExercicesContentTabSelection } from "../../Modules/Exercices/Exercices.js";
+import { SetRegisterBehavior } from "../UserAccount/UserRegister/UserRegister.js";
 
 const routes = {
     '/': './MainPage/Home/Home.html',
@@ -33,6 +34,13 @@ export async function loadPageContent(path) {
 
         if (path === "/exercices") {
             setExercicesContentTabSelection();
+        }
+
+        if (path === "/register") {
+            SetRegisterBehavior();
+        }
+
+        if (path === "/login") {
         }
 
         const registerLink = document.getElementById("UserRegisterLink");
